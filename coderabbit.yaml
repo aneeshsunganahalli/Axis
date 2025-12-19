@@ -11,7 +11,7 @@ reviews:
   path_instructions:
     - path: "**/.env*"
       instructions: |
-        "Check that the sensitive data is not stored in the repository. Should not contain real secrets or be commited."
+        "Check that the sensitive data is not stored in the repository. Should not contain real secrets or be committed."
 
     - path: server/**
       instructions: |
