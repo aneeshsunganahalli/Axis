@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-US"
+tone_instructions: ''
+early_access: false
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+
+  path_instructions:
+    - path: "**/.env*"
+      instructions: |
+        "Check that the sensitive data is not stored in the repository. Should not contain real secrets or be committed."
+
+    - path: server/**
+      instructions: |
+        Review this code like a senior backend engineer.
+
+        Priorities (in order):
+        1. Correctness and logical soundness
+        2. Edge cases and failure scenarios
+        3. API and schema design quality
+        4. Maintainability and clarity
+
+        Be concise and technical.
+        Do not praise or summarize obvious things.
+        Do not suggest stylistic or formatting changes unless they affect correctness.
+        Do not propose large refactors unless there is a clear functional or architectural issue.
+
+        If something is acceptable but not ideal, mention it briefly as a non-blocking suggestion.
+    
+    - path: client/**
+      instructions: |
+        Review this code like a pragmatic frontend engineer.
+
+        Priorities (in order):
+        1. User-visible correctness (rendering, state, side effects)
+        2. Data flow and state management clarity
+        3. Accessibility and basic UX correctness
+        4. Maintainability and component boundaries
+
+        Avoid nitpicking styling, formatting, or naming.
+        Do not suggest large refactors or state rewrites unless there is a clear bug or UX issue.
+        Focus on logic, effects, and correctness rather than visual preferences.
+
+        If an improvement is optional, mark it as non-blocking.
+
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+chat:
+  auto_reply: true
+
